@@ -18,7 +18,7 @@ module.exports = {
       models.users.get((err, result) => {res.send(result)});
     },
     post: function (req, res) {
-      models.users.post((err, result) => {res.send('you created an account!!!!')});
+      models.users.post((err, result) => {res.send('you created an account!!!!')}, req.body.username);
     }
   }
 };

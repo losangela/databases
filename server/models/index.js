@@ -14,9 +14,9 @@ module.exports = {
     
     }, // a function which produces all the messages
     post: function (callback, dataObj) {
-      // console.log(typeof dataObj.message)
-      let text = `INSERT INTO MESSAGES (id_users, message_text, id_rooms) values ((select user_id from users where user_name = "${dataObj.username}"), "${dataObj.message}", 1);`
-      console.log(text);
+
+      let text = `INSERT INTO MESSAGES (id_users, message_text, id_rooms) values ((select user_id from users where user_name = "${dataObj.username}"), "${dataObj.message}", (select room_id from rooms where room_name = "${dataObj.roomname}"));`
+      console.log(text)
       db.query(text, function (err, result) {
         if (err) {
           callback(err)
@@ -38,7 +38,18 @@ module.exports = {
         }
       });
     },
-    post: function () {}
+    post: function (callback, username) {
+
+      let text = `INSERT INTO users (user_name) values ("${username}");`
+      console.log(text)
+      db.query(text, function (err, result) {
+        if (err) {
+          callback(err)
+        } else {
+          callback(null, result);
+        }
+      });
+    }
   }
 };
 

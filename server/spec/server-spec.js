@@ -41,7 +41,7 @@ describe('Persistent Node Chat Server', function() {
         json: {
           username: 'Valjean',
           message: 'In mercy\'s name, three days is all I need.',
-          roomname: 'Hello'
+          roomname: 'lobby'
         }
       }, function () {
         // Now if we look in the database, we should find the
@@ -65,9 +65,9 @@ describe('Persistent Node Chat Server', function() {
     });
   });
 
-  xit('Should output all messages from the DB', function(done) {
+  it('Should output all messages from the DB', function(done) {
     // Let's insert a message into the db
-       var queryString = "";
+       var queryString = 'SELECT * FROM messages';
        var queryArgs = [];
     // TODO - The exact query string and query args to use
     // here depend on the schema you design, so I'll leave
