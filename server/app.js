@@ -1,5 +1,6 @@
 var express = require('express');
 var db = require('./db');
+var cors = require ('cors');
 
 // Middleware
 var morgan = require('morgan');
@@ -20,7 +21,7 @@ app.use(parser.json());
 app.use(parser.urlencoded({
   extended: true
 }));
-
+app.use(cors());
 // Set up our routes
 app.use('/classes', router);
 

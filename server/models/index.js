@@ -4,7 +4,7 @@ module.exports = {
   messages: {
     get: function (callback) {
       //
-      db.query('select user_id from users where user_name = "kathleen";', function (err, result) {
+      db.query('select * from messages', function (err, result) {
         if (err) {
           callback(err)
         } else {

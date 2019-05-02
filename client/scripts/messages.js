@@ -4,7 +4,7 @@ var Messages = {
   _data: {},
 
   items: function() {
-    return _.chain(Object.values(Messages._data)).sortBy('createdAt');
+    return _.chain(Object.values(Messages._data)).sortBy('z');
   },
 
   add: function(message, callback = ()=>{}) {
