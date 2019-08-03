@@ -3,4 +3,4 @@ This is a project I completed as a student at [hackreactor](http://hackreactor.c
 
 ## About
 
-This was a review of databases. SQL, No-SQL, ORMs, etc.
+This was a full stack review specizlied in databases. SQL, No-SQL, ORMs, etc.
